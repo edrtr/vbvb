@@ -93,8 +93,8 @@ AddEventHandler("pekehoras:jailPlayer", function(jailTime)
                     -- Notificación al jugador
                     TriggerClientEvent('esx:showNotification', _source, 'Has sido encarcelado por no tener suficientes horas de juego. No puedes salir a zona caliente sin tener al menos 5 horas.')
                     
-                    TriggerClientEvent('esx_jail:jailPlayer', _source, jailTime * 60)
-                    local jailLocation = { x = 417.94, y = -991.38, z = 29.34 }     
+                    TriggerClientEvent('esx_jail:jailPlayer', _source, jailTime)
+                    local jailLocation = { x = 417.94, y = -991.38, z = 29.34 }
                     TriggerClientEvent('esx:teleportPlayer', _source, jailLocation)
                     print('Player ' .. xPlayer.getName() .. ' (ID: ' .. _source .. ') has been jailed for ' .. jailTime .. ' minute(s) due to insufficient hours.')
                 else

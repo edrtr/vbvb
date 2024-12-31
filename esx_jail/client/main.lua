@@ -32,9 +32,10 @@ AddEventHandler('esx_jail:jailPlayer', function(_jailTime)
 		Citizen.Wait(20000)
 
 		-- Is the player trying to escape?
-		if #(GetEntityCoords(playerPed) - Config.JailLocation) > 10 then
-			ESX.Game.Teleport(playerPed, Config.JailLocation)
-			TriggerEvent('chat:addMessage', {args = {_U('judge'), _U('escape_attempt')}, color = {147, 196, 109}})
+if #(GetEntityCoords(playerPed) - Config.JailLocation) > 10 then
+ESX.Game.Teleport(playerPed, Config.JailLocation)
+TriggerEvent('chat:addMessage', {args = {_U('judge'), _U('escape_attempt')}, color = {147, 196, 109}})
+end
 		end
 	end
 
